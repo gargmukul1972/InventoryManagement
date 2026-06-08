@@ -1,0 +1,41 @@
+version: "3.9"
+
+services:
+
+  inventory-postgres:
+    image: postgres:16
+    container_name: inventory-postgres
+
+    environment:
+      POSTGRES_DB: inventorydb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+  inventory-api:
+    image: localhost/inventory-api:latest
+    container_name: inventory-api
+
+    depends_on:
+      - inventory-postgres
+
+    ports:
+      - "8080:8080"
+
+  inventory-frontend:
+    image: localhost/inventory-frontend:latest
+    container_name: inventory-frontend
+
+    depends_on:
+      - inventory-api
+
+    ports:
+      - "3000:80"
+
+volumes:
+  postgres-data:
