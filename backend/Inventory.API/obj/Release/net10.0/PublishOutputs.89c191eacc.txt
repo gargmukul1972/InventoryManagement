@@ -1,0 +1,15 @@
+/Users/mukulgarg/InventoryManagement/backend/Inventory.API/publish/Inventory.API
+/Users/mukulgarg/InventoryManagement/backend/Inventory.API/publish/appsettings.Development.json
+/Users/mukulgarg/InventoryManagement/backend/Inventory.API/publish/appsettings.json
+/Users/mukulgarg/InventoryManagement/backend/Inventory.API/publish/appsettings.Production.json
+/Users/mukulgarg/InventoryManagement/backend/Inventory.API/publish/Inventory.API.dll
+/Users/mukulgarg/InventoryManagement/backend/Inventory.API/publish/Inventory.API.runtimeconfig.json
+/Users/mukulgarg/InventoryManagement/backend/Inventory.API/publish/Inventory.API.pdb
+/Users/mukulgarg/InventoryManagement/backend/Inventory.API/publish/Microsoft.AspNetCore.OpenApi.dll
+/Users/mukulgarg/InventoryManagement/backend/Inventory.API/publish/Microsoft.EntityFrameworkCore.dll
+/Users/mukulgarg/InventoryManagement/backend/Inventory.API/publish/Microsoft.EntityFrameworkCore.Abstractions.dll
+/Users/mukulgarg/InventoryManagement/backend/Inventory.API/publish/Microsoft.EntityFrameworkCore.Relational.dll
+/Users/mukulgarg/InventoryManagement/backend/Inventory.API/publish/Microsoft.OpenApi.dll
+/Users/mukulgarg/InventoryManagement/backend/Inventory.API/publish/Npgsql.dll
+/Users/mukulgarg/InventoryManagement/backend/Inventory.API/publish/Npgsql.EntityFrameworkCore.PostgreSQL.dll
+/Users/mukulgarg/InventoryManagement/backend/Inventory.API/publish/Inventory.API.deps.json

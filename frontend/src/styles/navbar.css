@@ -1,0 +1,144 @@
+/* --- Premium Header Navbar --- */
+
+.navbar {
+  height: 70px;
+  background: var(--bg-panel);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  position: sticky;
+  top: 0;
+  z-index: 80;
+  backdrop-filter: var(--glass-blur);
+  transition: background-color var(--transition-smooth), border-color var(--transition-smooth);
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.navbar-title {
+  font-size: 20px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+}
+
+.hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: var(--text-secondary);
+  padding: 8px;
+  border-radius: var(--border-radius-sm);
+  transition: all var(--transition-smooth);
+}
+
+.hamburger-btn:hover {
+  background: var(--bg-canvas);
+  color: var(--text-primary);
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Theme Toggle Button styling */
+.theme-toggle-btn {
+  background: var(--bg-canvas);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-smooth);
+}
+
+.theme-toggle-btn:hover {
+  background: var(--primary-glow);
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+  transform: rotate(15deg) scale(1.05);
+}
+
+/* Profile Widget Card */
+.profile-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-left: 1px solid var(--border-color);
+  padding-left: 20px;
+}
+
+.profile-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--primary-glow);
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  border: 2px solid var(--border-color);
+  transition: all var(--transition-smooth);
+}
+
+.profile-container:hover .profile-avatar {
+  border-color: var(--primary-color);
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.profile-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.profile-role {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* Tablet & Mobile Breakpoints */
+@media (max-width: 991px) {
+  .hamburger-btn {
+    display: flex;
+  }
+  
+  .navbar {
+    padding: 0 16px;
+  }
+  
+  .profile-info {
+    display: none; /* Hide text on small screens, keep only avatar */
+  }
+  
+  .profile-container {
+    padding-left: 12px;
+  }
+  
+  .navbar-title {
+    font-size: 18px;
+  }
+}
