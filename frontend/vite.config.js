@@ -28,42 +28,6 @@ function fixFederationCssForVite8() {
   };
 }
 
-/**
- * Custom transform plugin to wrap BrowserRouter and MainLayout dynamically.
- * Strips them when running as a microfrontend nested within the Host App's router.
- */
-function wrapBrowserRouter() {
-  return {
-    name: "wrap-browser-router",
-    transform(code, id) {
-      if (id.includes("AppRoutes.jsx")) {
-        let newCode = code;
-        // 1. Rename the imported BrowserRouter to OriginalBrowserRouter
-        newCode = newCode.replace(/BrowserRouter\s*,/, "BrowserRouter as OriginalBrowserRouter,");
-        // 2. Rename the imported MainLayout to OriginalMainLayout
-        newCode = newCode.replace(/\bMainLayout\s+from/, "OriginalMainLayout from");
-        // 3. Prepend importing useInRouterContext, createElement, and Fragment
-        newCode = `import { useInRouterContext } from "react-router-dom";\nimport { createElement, Fragment } from "react";\n` + newCode;
-        // 4. Define the wrapper components at the end of the file using plain JS
-        newCode += `
-          function BrowserRouter({ children }) {
-            const inRouter = useInRouterContext();
-            return inRouter ? createElement(Fragment, null, children) : createElement(OriginalBrowserRouter, null, children);
-          }
-          function MainLayout({ children }) {
-            const inRouter = useInRouterContext();
-            return inRouter ? createElement(Fragment, null, children) : createElement(OriginalMainLayout, null, children);
-          }
-        `;
-        return {
-          code: newCode,
-          map: null
-        };
-      }
-    }
-  };
-}
-
 export default defineConfig({
   base: "/",
 
@@ -97,7 +61,6 @@ export default defineConfig({
     }),
 
     fixFederationCssForVite8(),
-    wrapBrowserRouter(),
   ],
 
   build: {

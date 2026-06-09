@@ -1,5 +1,4 @@
 import {
-  BrowserRouter,
   Routes,
   Route
 }
@@ -15,29 +14,19 @@ import MainLayout from
 "../layouts/MainLayout";
 
 function AppRoutes() {
-
   return (
-    <BrowserRouter>
-
-      <MainLayout>
-
-        <Routes>
-
-          <Route
-            path="/"
-            element={<Dashboard />}
-          />
-
-          <Route
-            path="/products"
-            element={<Products />}
-          />
-
-        </Routes>
-
-      </MainLayout>
-
-    </BrowserRouter>
+    <MainLayout>
+      <Routes>
+        <Route
+          index
+          element={<Dashboard />}
+        />
+        <Route
+          path="products"
+          element={<Products />}
+        />
+      </Routes>
+    </MainLayout>
   );
 }
 

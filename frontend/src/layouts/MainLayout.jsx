@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Sidebar from "../components/Sidebar/Sidebar";
-import Navbar from "../components/Navbar/Navbar";
+// import Navbar from "../components/Navbar/Navbar";
 
 function MainLayout({ children }) {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
@@ -43,11 +43,6 @@ function MainLayout({ children }) {
       />
 
       <div className="main-content">
-        <Navbar 
-          toggleMobileSidebar={toggleMobileSidebar} 
-          sidebarCollapsed={sidebarCollapsed}
-          toggleSidebar={toggleSidebar}
-        />
         <main className="page-container">
           {children}
         </main>
