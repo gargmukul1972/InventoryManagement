@@ -38,7 +38,7 @@ export default defineConfig({
       name: "inventory",
       filename: "remoteEntry.js",
       exposes: {
-        "./Routes": "./src/routes/AppRoutes.jsx",
+        "./AppRoutes": "./src/routes/AppRoutes.jsx",
       },
       shared: {
         react: {
