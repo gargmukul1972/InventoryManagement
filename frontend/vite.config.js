@@ -11,8 +11,8 @@ export default defineConfig({
 
       // IMPORTANT: expose your app entry safely
       exposes: {
-        "./App": "./src/App.jsx",
-      },
+  "./Routes": "./src/routes/AppRoutes.jsx",
+},
 
       shared: ["react", "react-dom"],
     }),
