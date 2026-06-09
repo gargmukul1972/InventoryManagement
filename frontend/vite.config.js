@@ -1,33 +1,37 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import federation from '@originjs/vite-plugin-federation'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import federation from "@originjs/vite-plugin-federation";
 
 export default defineConfig({
   plugins: [
     react(),
     federation({
-      name: 'inventory', // ✅ your app name
-      filename: 'remoteEntry.js',
+      name: "inventory",
+      filename: "remoteEntry.js",
 
-      // SAFE: leave empty for now (no breaking changes)
-      remotes: {},
-
+      // IMPORTANT: expose your app entry safely
       exposes: {
-        // keep empty unless you want micro-frontend sharing
-        // './ExampleComponent': './src/components/ExampleComponent.jsx',
+        "./App": "./src/App.jsx",
       },
 
-      shared: ['react', 'react-dom']
-    })
+      shared: ["react", "react-dom"],
+    }),
   ],
 
   build: {
-    target: 'esnext',
+    target: "esnext",
+
     minify: false,
-    cssCodeSplit: false
+
+    cssCodeSplit: false,
+
+    rollupOptions: {
+      output: {
+        // CRITICAL FIX: ensures correct asset placement
+        format: "esm",
+      },
+    },
   },
 
-  server: {
-    port: 5173
-  }
-})
+  base: "/", // safe for Render deployment
+});
