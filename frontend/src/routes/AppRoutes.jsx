@@ -1,51 +1,33 @@
-import { Routes, Route } from "react-router-dom";
+import {
+  Routes,
+  Route
+}
+from "react-router-dom";
 
-import Dashboard from "../pages/Dashboard";
-import Products from "../pages/Products";
-import MainLayout from "../layouts/MainLayout";
+import Dashboard from
+"../pages/Dashboard";
+
+import Products from
+"../pages/Products";
+
+import MainLayout from
+"../layouts/MainLayout";
 
 function AppRoutes() {
-return ( <Routes>
-<Route path="/" element={<MainLayout />}>
-<Route index element={<Dashboard />} />
-<Route path="products" element={<Products />} /> </Route> </Routes>
-);
+  return (
+    <MainLayout>
+      <Routes>
+        <Route
+          index
+          element={<Dashboard />}
+        />
+        <Route
+          path="products"
+          element={<Products />}
+        />
+      </Routes>
+    </MainLayout>
+  );
 }
 
 export default AppRoutes;
-
-
-
-// import {
-//   Routes,
-//   Route
-// }
-// from "react-router-dom";
-
-// import Dashboard from
-// "../pages/Dashboard";
-
-// import Products from
-// "../pages/Products";
-
-// import MainLayout from
-// "../layouts/MainLayout";
-
-// function AppRoutes() {
-//   return (
-//     <MainLayout>
-//       <Routes>
-//         <Route
-//           index
-//           element={<Dashboard />}
-//         />
-//         <Route
-//           path="products"
-//           element={<Products />}
-//         />
-//       </Routes>
-//     </MainLayout>
-//   );
-// }
-
-// export default AppRoutes;
