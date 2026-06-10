@@ -1,8 +1,9 @@
 import { useState } from "react";
 import Sidebar from "../components/Sidebar/Sidebar";
+import { Outlet } from "react-router-dom";
 // import Navbar from "../components/Navbar/Navbar";
 
-function MainLayout({ children }) {
+function MainLayout() {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -44,7 +45,8 @@ function MainLayout({ children }) {
 
       <div className="main-content">
         <main className="page-container">
-          {children}
+          <Outlet />
+          {/* {children} */}
         </main>
       </div>
     </div>
