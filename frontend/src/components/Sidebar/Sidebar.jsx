@@ -22,7 +22,7 @@ function Sidebar({ collapsed, toggleCollapse, mobileOpen, closeMobile }) {
         <ul>
           <li>
             <NavLink 
-              to="/" 
+              to="." 
               onClick={closeMobile} 
               className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
             >
