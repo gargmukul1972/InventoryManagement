@@ -32,7 +32,7 @@ function Sidebar({ collapsed, toggleCollapse, mobileOpen, closeMobile }) {
           </li>
           <li>
             <NavLink 
-              to="/products" 
+              to="products" 
               onClick={closeMobile} 
               className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
             >
